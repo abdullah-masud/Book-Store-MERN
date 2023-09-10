@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div>
-      <h2 className="bg-red-400 text-white">books.length</h2>
+      <h2 className="bg-red-400 text-white">{books.data.length}</h2>
     </div>
   );
 };
