@@ -1,20 +1,14 @@
-import { useEffect, useState } from "react";
-import Axios from "axios";
+import { ToastContainer } from "react-toastify";
+import Books from "./components/Books/Books";
+import Header from "./components/Header/Header";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
-  const [books, setBooks] = useState([]);
-  console.log(books?.data?.length);
-  useEffect(() => {
-    const getBooks = async () => {
-      const { data } = await Axios.get("http://localhost:5555/books");
-      setBooks(data);
-    };
-    getBooks();
-  }, []);
-
   return (
     <div>
-      <h2 className="bg-red-400 text-white">{books.data.length}</h2>
+      <Header />
+      <Books />
+      <ToastContainer />
     </div>
   );
 };
